@@ -26,4 +26,16 @@ async function lineCounter () {
   return numberOfLines
 }
 
+// Count how many functions there are in a file.
+async function functionCounter () {
+  const string = await readFile()
+
+  const arrayOfFunctions = string.split('function')
+
+  const numberOfFunctions = arrayOfFunctions.length
+  console.log(numberOfFunctions)
+  return numberOfFunctions
+}
+
 lineCounter()
+functionCounter()
