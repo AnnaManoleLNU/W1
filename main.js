@@ -18,11 +18,12 @@ const fs = require('fs')
 // Count the rows of code in a file.
 async function lineCounter () {
   const string = await readFile()
-  if (string.includes('\n')) {
-    console.log('String includes row break')
-  }
-  console.log(string)
+
+  const arrayOfRowBreaks = string.split('\n')
+
+  const numberOfLines = arrayOfRowBreaks.length
+  console.log(numberOfLines)
+  return numberOfLines
 }
 
-// readFile()
 lineCounter()
